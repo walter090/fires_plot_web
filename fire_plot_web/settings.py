@@ -56,7 +56,7 @@ ROOT_URLCONF = 'fire_plot_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,5 +122,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR, STATIC_URL))
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR, MEDIA_URL))
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_cdn')
