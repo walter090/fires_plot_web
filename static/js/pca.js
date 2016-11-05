@@ -1,19 +1,19 @@
 var margin = {top: 50, bottom: 50, right: 50, left: 50};
 var labelOffset = 15;
 
-var width = 700;
+var width = 500;
 var height = 700;
 
 var inner_width = width - margin.left - margin.right;
 var inner_height = height - margin.top - margin.bottom;
 
-var rad = 2;
+var rad = 1;
 
-d3.csv('../data_resource/pca_components.csv', function (data) {
+d3.csv('../static/data_resource/pca_components.csv', function (data) {
     render(data)
 });
 
-d3.csv('../data_resource/ei.csv', function (data) {
+d3.csv('../static/data_resource/ei.csv', function (data) {
     var xDomain = math.range(1, 11)._data;
     var xScale = d3.scalePoint()
             .range([0, inner_width])
@@ -96,7 +96,7 @@ function render(data) {
     });
 
     var points = [{}];
-    d3.csv('../data_resource/pred.csv', function (d) {
+    d3.csv('../static/data_resource/pred.csv', function (d) {
         var svg = d3.select('#pca').append('svg')
             .attr('width', width)
             .attr('height', height);

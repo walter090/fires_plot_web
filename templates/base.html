@@ -3,32 +3,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Fires{% endblock %}</title>
 </head>
 <body>
 <ul class="nav nav-tabs nav-justified">
     {% for object in object_set %}
         <li>
-            <a href="#" class="nav-text" style="font-size: 2em; color: white">
+            <a href="{{ object.get_absolute_url }}" class="nav-text" style="font-size: 2em; color: white">
             {{ object.title }}
             </a>
         </li>
     {% endfor %}
-
 </ul>
 {% block content %}
 
 {% endblock %}
 </body>
 
-{% block scripts %}
-
-{% endblock %}
-
 <link rel="stylesheet" href="{% static "css/default.css" %}">
 
-<script src="//d3js.org/d3.v4.min.js"></script>
-<script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+
+{% block scripts %}{% endblock %}
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"

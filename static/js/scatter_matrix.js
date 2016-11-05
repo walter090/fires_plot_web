@@ -1,4 +1,4 @@
-d3.csv('../data_resource/forest_fire_pred.csv', convert, renderScatterMatrix);
+d3.csv('../static/data_resource/forest_fire_pred.csv', convert, renderScatterMatrix);
 
 function renderScatterMatrix(data) {
     var width = 650;
@@ -38,9 +38,9 @@ function renderScatterMatrix(data) {
     svg.selectAll('g')
         .data(attributeMatrix)
         .enter()
-        .append("g")
-        .attr("transform", function (d) {
-            return "translate(" + (d.x * 100) + "," + (d.y * 100) + ")"
+        .append('g')
+        .attr('transform', function (d) {
+            return 'translate(' + (d.x * 100) + ',' + (d.y * 100) + ')'
         });
 
     svg.selectAll('g')

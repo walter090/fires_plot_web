@@ -1,7 +1,7 @@
 var margin = {top: 30, bottom: 30, right: 30, left: 30};
 var labelOffset = 15;
 
-var width = 650;
+var width = 500;
 var height = 650;
 
 var inner_width = width - margin.left - margin.right;
@@ -9,12 +9,13 @@ var inner_height = height - margin.top - margin.bottom;
 
 var rad = 1;
 
-d3.csv('../data_resource/mds.csv', function (data) {
-    render(data);
+d3.csv('../static/data_resource/mds.csv', function (data) {
+    render(data, '#mds');
+    render(data, '#mds_attr')
 });
 
-function render(data) {
-    var svg = d3.select('#mds').append('svg')
+function render(data, id) {
+    var svg = d3.select(id).append('svg')
         .attr('width', width)
         .attr('height', height);
 

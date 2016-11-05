@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block content %}
+    <div id="scatter-matrix"></div>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static "js/scatter_matrix.js" %}"></script>
+{% endblock %}

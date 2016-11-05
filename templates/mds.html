@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="span6" id="mds">MDS Plot</div>
+        </div>
+        <div class="col-sm-6">
+            <div class="span6" id="mds_attr">MDS Plot on Attr</div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static "js/mds.js" %}"></script>
+{% endblock %}

@@ -34,15 +34,17 @@ path{
     stroke-width: 1;
 }
 
-.nav>li>a:hover{
-    background-color: black;
-    border-color: white;
+.nav>li>a{
+    color: white;
 }
 
-.nav-text:hover{
-    -webkit-animation-name: pulse;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
+.nav>li>a:focus,
+.nav>li>a:hover{
+    background-color: white !important;
+    border-color: transparent !important;
+    color: black !important;
+    -webkit-animation-name: none;
+    transition: all 1s ease-in-out;
 }
 
 .selected{

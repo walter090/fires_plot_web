@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block content %}
+<div id="correlation"></div>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static "js/correlation.js" %}"></script>
+{% endblock %}
