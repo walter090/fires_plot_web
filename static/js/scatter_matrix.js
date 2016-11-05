@@ -5,6 +5,7 @@ function renderScatterMatrix(data) {
     var height = 650;
     var cell_size = 100;
     var margin = 5;
+    var out_margin = 50;
     var rad = 1;
 
     var attributes = ['area', 'RH', 'FFMC', 'ISI', 'temp'];
@@ -27,8 +28,7 @@ function renderScatterMatrix(data) {
 
     var svg = d3.select('#scatter-matrix').append('svg')
         .attr('width', width)
-        .attr('height', height)
-        .attr('transform', 'translate');
+        .attr('height', height);
 
     data.forEach(function (d) {
         attributes.forEach(function (feature) {
@@ -41,7 +41,7 @@ function renderScatterMatrix(data) {
         .enter()
         .append("g")
         .attr("transform", function (d) {
-            return "translate(" + (d.x * cell_size) + "," + (d.y * cell_size) + ")"
+            return "translate(" + (d.x * cell_size + out_margin) + "," + (d.y * cell_size + out_margin) + ")"
         });
 
     svg.selectAll('g')
