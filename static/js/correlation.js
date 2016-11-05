@@ -7,7 +7,8 @@ var height = 650;
 var inner_width = width - margin.left - margin.right;
 var inner_height = height - margin.top - margin.bottom;
 
-d3.csv('../static/data_resource/corr_matrix.csv', convert, function (data) {
+d3.csv('../static/data_resource/corr_matrix.csv', function (data) {
+    console.log(data);
     render(data);
 });
 
@@ -53,7 +54,7 @@ function render(data) {
     var cScale = d3.scaleSequential(d3.interpolateInferno)
         .domain([min, max]);
 
-    d3.csv('../static/data_resource/corr_matrix_list.csv', function (mList) {
+    d3.csv('../static/data_resource/corr_matrix_list1.csv', function (mList) {
         var box = group.selectAll('.box').data(mList);
         var box_width = xScale.step();
         var box_height = yScale.step();
