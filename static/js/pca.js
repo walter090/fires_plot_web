@@ -1,7 +1,7 @@
 var margin = {top: 50, bottom: 50, right: 50, left: 50};
 var labelOffset = 15;
 
-var width = 500;
+var width = 700;
 var height = 700;
 
 var inner_width = width - margin.left - margin.right;
@@ -54,7 +54,7 @@ d3.csv('../static/data_resource/ei.csv', function (data) {
     bar.enter()
         .append('rect')
         .attr('class', '.bar')
-        .attr('width', 50)
+        .attr('width', inner_width / 10 - 2)
         .attr('x', function (d) {
             return xScale(d['index']) + margin.left;
         })

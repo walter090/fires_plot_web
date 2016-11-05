@@ -27,7 +27,8 @@ function renderScatterMatrix(data) {
 
     var svg = d3.select('#scatter-matrix').append('svg')
         .attr('width', width)
-        .attr('height', height);
+        .attr('height', height)
+        .attr('transform', 'translate');
 
     data.forEach(function (d) {
         attributes.forEach(function (feature) {
@@ -38,9 +39,9 @@ function renderScatterMatrix(data) {
     svg.selectAll('g')
         .data(attributeMatrix)
         .enter()
-        .append('g')
-        .attr('transform', function (d) {
-            return 'translate(' + (d.x * 100) + ',' + (d.y * 100) + ')'
+        .append("g")
+        .attr("transform", function (d) {
+            return "translate(" + (d.x * cell_size) + "," + (d.y * cell_size) + ")"
         });
 
     svg.selectAll('g')
@@ -49,8 +50,8 @@ function renderScatterMatrix(data) {
                 .style('fill', 'black')
                 .style('stroke', 'white')
                 .style('stroke-width', 1)
-                .attr('height', 100)
-                .attr('width', 100);
+                .attr('height', cell_size)
+                .attr('width', cell_size);
 
             d3.select(this).append('text')
                 .attr('x', 50)
@@ -64,8 +65,8 @@ function renderScatterMatrix(data) {
                 .enter()
                 .append('circle')
                 .attr('r', 0)
-                .attr('cx', function (d) {return scale[m['a']](d[m['a']])})
-                .attr('cy', function (d) {return 95 - scale[m['a']](d[m['b']])})
+                .attr('cx', function (d) {return scale[m.a](d[m.a])})
+                .attr('cy', function (d) {return cell_size - scale[m.b](d[m.b])})
                 .style('fill', 'red')
                 .transition()
                 .style('fill', 'red')

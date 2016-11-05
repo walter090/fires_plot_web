@@ -24,11 +24,11 @@ def show_graph(request, id=None):
     if id == '2':
         return render(request, 'correlation.html', context)
     if id == '3':
-        return render(request, 'scatter-matrix.html')
+        return render(request, 'scatter-matrix.html', context)
     if id == '4':
-        return render(request, 'mds.html')
+        return render(request, 'mds.html', context)
     if id == '5':
-        return render(request, 'pca.html')
+        return render(request, 'pca.html', context)
 
     return render(request, 'base.html', context)
 

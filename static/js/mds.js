@@ -1,7 +1,7 @@
 var margin = {top: 30, bottom: 30, right: 30, left: 30};
 var labelOffset = 15;
 
-var width = 500;
+var width = 700;
 var height = 650;
 
 var inner_width = width - margin.left - margin.right;
