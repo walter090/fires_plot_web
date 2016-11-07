@@ -1,0 +1,1 @@
+web: gunicorn fire_plot_web.wsgi --log-file -

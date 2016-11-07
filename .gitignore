@@ -1,0 +1,10 @@
+workspace.xml
+watcherTasks.xml
+db.sqlite3
+fire_plot_web/__pycache__/urls.cpython-35.pyc
+fire_plot_web/__pycache__/wsgi.cpython-35.pyc
+fires/__pycache__/urls.cpython-35.pyc
+fires/__pycache__/views.cpython-35.pyc
+fires/migrations/0001_initial.py
+fires/migrations/0002_remove_graphs_script_name.py
+fires/migrations/__pycache__/
