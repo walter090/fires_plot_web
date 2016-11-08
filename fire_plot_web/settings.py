@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'fire_plot_web',
         'USER': 'snowman',
         'PASSWORD': '112358',
-        'HOST': 'localhost',
+        'HOST': '',
         'PORT': '',
     }
 }
