@@ -1,5 +1,6 @@
 backports.shutil-get-terminal-size==1.0.0
 decorator==4.0.9
+dj-database-url==0.4.1
 Django==1.10
 djangorestframework==3.5.1
 entrypoints==0.2.2
