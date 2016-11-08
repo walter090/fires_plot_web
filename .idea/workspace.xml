@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3c404a-6775-4d7a-b91c-9e16b660573b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fires/migrations/0003_auto_20161108_0522.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fire_plot_web.iws" />
@@ -65,6 +65,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="parallel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/parallel.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,7 +115,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fire_plot_web/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
@@ -123,18 +133,6 @@
             <state relative-caret-position="44">
               <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fire_plot_web/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding>
-                <element signature="e#230#239#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +168,6 @@
         <option value="$PROJECT_DIR$/static/js/scatter_matrix.js" />
         <option value="$PROJECT_DIR$/static/js/correlation.js" />
         <option value="$PROJECT_DIR$/templates/correlation.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/fire_plot_web/wsgi.py" />
@@ -182,6 +179,7 @@
         <option value="$PROJECT_DIR$/templates/parallel.html" />
         <option value="$PROJECT_DIR$/static/js/parallel.js" />
         <option value="$PROJECT_DIR$/fire_plot_web/settings.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -705,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478584455079</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="migrations made">
+      <created>1478648403337</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1478648403337</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -755,7 +760,8 @@
     <MESSAGE value="runtime changed" />
     <MESSAGE value="missed parallel added, database changed to postgres for heroku" />
     <MESSAGE value="host modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="host modified" />
+    <MESSAGE value="migrations made" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrations made" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1006,14 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fires/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1173,6 +1171,14 @@
           <folding>
             <element signature="e#315#324#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
