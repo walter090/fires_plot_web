@@ -2,7 +2,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 
-class Graphs(models.Model):
+class Graph(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50)
 
@@ -11,7 +11,7 @@ class Graphs(models.Model):
 
     @staticmethod
     def get_all():
-        return Graphs.objects.all()
+        return Graph.objects.all()
 
     def get_absolute_url(self):
         return reverse('graphs:individual', kwargs={'id': self.id})

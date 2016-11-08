@@ -21,7 +21,7 @@ var svg = d3.select('#parallel')
     .attr('transform',
         'translate(' + margin.left + ',' + margin.top + ')');
 
-d3.csv('../data_resource/ordered.csv', function (data) {
+d3.csv('../static/data_resource/ordered.csv', function (data) {
     render(data);
 });
 

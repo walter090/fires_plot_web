@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Graphs
+from .models import Graph
 
 
 def go_home(request):
-    query_set = Graphs.objects.all()
+    query_set = Graph.objects.all()
     context = {
         'object_set': query_set
     }
@@ -12,8 +12,8 @@ def go_home(request):
 
 
 def show_graph(request, id=None):
-    query_set = Graphs.objects.all()
-    instance = get_object_or_404(Graphs, id=id)
+    query_set = Graph.objects.all()
+    instance = get_object_or_404(Graph, id=id)
     context = {
         'title': instance.title,
         'instance': instance,
@@ -29,6 +29,8 @@ def show_graph(request, id=None):
         return render(request, 'mds.html', context)
     if id == '5':
         return render(request, 'pca.html', context)
+    if id == '6':
+        return render(request, 'parallel.html', context)
 
     return render(request, 'base.html', context)
 
