@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block content %}
+    <div id="map-container" style="height: 100%; background-color: white">
+        <div id="map" style="height: 700px"></div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDITlq4i8_gc3SItsEOAtk8drM_7YWvrBU&callback=initMap">
+    </script>
+    <script src="{% static "js/map.js" %}"></script>
+{% endblock %}

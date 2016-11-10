@@ -6,7 +6,7 @@
     <title>{% block title %}Fires{% endblock %}</title>
 </head>
 <body>
-<ul class="nav nav-tabs nav-justified" style="font-size: 2em; color: white">
+<ul class="nav nav-tabs nav-justified" style="font-size: 2em; color: white; height: auto">
     <li><a href="/">Home</a></li>
     {% for object in object_set %}
         <li>
@@ -27,6 +27,7 @@
 
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <script src="http://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 
 {% block scripts %}{% endblock %}
 

@@ -11,6 +11,10 @@ def go_home(request):
     return render(request, 'base.html', context)
 
 
+def show_map(request):
+    return render(request, 'map.html', context={'title': 'Map'})
+
+
 def show_graph(request, id=None):
     query_set = Graph.objects.all()
     instance = get_object_or_404(Graph, id=id)

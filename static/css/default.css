@@ -2,8 +2,7 @@
 
 * {
     font-family: 'Open Sans Condensed', sans-serif;
-    color: white;
-    background-color: black;
+    color: black;
 }
 
 .tooltip{
@@ -18,11 +17,11 @@
 }
 
 text{
-    fill: white;
+    fill: black;
 }
 
 path{
-    stroke: white;
+    stroke: black;
 }
 
 .box{
@@ -30,21 +29,21 @@ path{
 }
 
 .tick line{
-    stroke: white;
+    stroke: black;
     stroke-width: 1;
 }
 
 .nav>li>a{
-    color: white;
+    color: black;
+    transition: all 1s ease-in-out;
 }
 
 .nav>li>a:focus,
 .nav>li>a:hover{
-    background-color: white !important;
+    background-color: black !important;
     border-color: transparent !important;
-    color: black !important;
+    color: white !important;
     -webkit-animation-name: none;
-    transition: all 1s ease-in-out;
 }
 
 .selected{
@@ -83,11 +82,11 @@ path{
     text-align: center;
     margin-left: 0;
     width: 5em;
-    border: 2px solid black;
+    border: 2px solid white;
 }
 
 .feature-selection li:hover {
-    border: 2px solid white;
+    border: 2px solid black;
 }
 
 text{
