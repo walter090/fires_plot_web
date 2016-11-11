@@ -35,6 +35,7 @@ path{
 
 .nav>li>a{
     color: black;
+    box-shadow: gray;
     transition: all 1s ease-in-out;
 }
 
