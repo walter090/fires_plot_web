@@ -8,4 +8,13 @@ function initMap() {
         zoom: 11,
         disableDefaultUI: true
     });
+
+    var layer = new google.maps.FusionTablesLayer({
+        query: {
+            select: 'latitude',
+            from: '1BQfdKewAO2ZXN9WwjqcFgptb1_PKUTYfh4Q9iONi'
+        }
+    });
+
+    layer.setMap(map);
 }

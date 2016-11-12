@@ -2,9 +2,11 @@
 {% load staticfiles %}
 {% block title %}{{ title }} | {{ block.super }}{% endblock %}
 {% block content %}
-    <div id="map-container" style="height: 100%; background-color: white">
-        <div id="map" style="height: 700px"></div>
-    </div>
+    <iframe scrolling="no"
+            frameborder="no"
+            style="height: 700px; width: 100%"
+            src="https://fusiontables.google.com/embedviz?q=select+col2%2C+col1+from+1BQfdKewAO2ZXN9WwjqcFgptb1_PKUTYfh4Q9iONi+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=41.854537794078624&amp;lng=-6.8720061492920195&amp;t=1&amp;z=11&amp;l=col2&amp;y=2&amp;tmplt=2&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=0.74&amp;hmr=50&amp;hmw=0&amp;hml=TWO_COL_LAT_LNG">
+    </iframe>
 {% endblock %}
 {% block scripts %}
     <script async defer

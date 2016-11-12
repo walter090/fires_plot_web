@@ -12,7 +12,10 @@ def go_home(request):
 
 
 def show_map(request):
-    return render(request, 'map.html', context={'title': 'Map'})
+    context = {
+        'object_set': Graph.objects.all()
+    }
+    return render(request, 'map.html',context)
 
 
 def show_graph(request, id=None):
