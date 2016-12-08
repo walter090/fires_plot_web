@@ -11,12 +11,20 @@ def go_home(request):
     return render(request, 'base.html', context)
 
 
+def show_dashboard(request):
+    context = {
+        'title': 'Dashboard',
+        'object_set': Graph.objects.all(),
+    }
+    return render(request, 'dashboard.html', context)
+
+
 def show_map(request):
     context = {
         'object_set': Graph.objects.all(),
         'title': 'Map'
     }
-    return render(request, 'map.html',context)
+    return render(request, 'map.html', context)
 
 
 def show_graph(request, id=None):

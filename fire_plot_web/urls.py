@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^graphs/', include('fires.urls', namespace='graphs')),
     url(r'^map$', views.show_map),
+    url(r'^dashboard', views.show_dashboard),
 ]

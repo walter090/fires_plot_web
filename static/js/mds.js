@@ -50,9 +50,6 @@ function render(data, id) {
             return yScale(yValue(d));
         };
 
-    console.log(xScale.range());
-    console.log(xScale(8));
-
     var dot = group.selectAll('.dot').data(data);
 
     xAxisGroup

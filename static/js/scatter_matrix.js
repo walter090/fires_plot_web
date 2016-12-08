@@ -1,12 +1,12 @@
 d3.csv('../static/data_resource/forest_fire_pred.csv', convert, renderScatterMatrix);
 
 function renderScatterMatrix(data) {
-    var width = 650;
-    var height = 650;
-    var cell_size = 100;
+    var cell_size = 60;
+    var out_margin = 10;
+    var width = cell_size * 5 + out_margin;
+    var height = cell_size * 5 + out_margin;
     var margin = 5;
-    var out_margin = 50;
-    var rad = 1;
+    var rad = 0.5;
 
     var attributes = ['area', 'RH', 'FFMC', 'ISI', 'temp'];
     var attributeMatrix = [];
@@ -47,8 +47,8 @@ function renderScatterMatrix(data) {
     svg.selectAll('g')
         .each(function (m) {
             d3.select(this).append('rect')
-                .style('fill', 'black')
-                .style('stroke', 'white')
+                .style('fill', 'white')
+                .style('stroke', 'black')
                 .style('stroke-width', 1)
                 .attr('height', cell_size)
                 .attr('width', cell_size);

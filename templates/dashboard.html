@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block content %}
+    <div id="db-scatter" class="col-md-4 dashboard-element">
+        <div class="selection sidenav col-sm-4 lists">
+            <div class="col-sm-6 list1">
+                <h1>X Axis</h1>
+                <ul id="x-feature" class="feature-selection" style="padding-left: 0">
+                    <li id="x-month">Month</li>
+                    <li id="x-FFMC">FFMC</li>
+                    <li id="x-ISI">ISI</li>
+                    <li id="x-temp">temp</li>
+                    <li id="x-RH">RH</li>
+                    <li id="x-wind">Wind</li>
+                    <li id="x-area">Area</li>
+                </ul>
+            </div>
+            <div class="col-sm-6 list1">
+                <h1>Y Axis</h1>
+                <ul id="y-feature" class="feature-selection" style="padding-left: 0">
+                    <li id="y-month">Month</li>
+                    <li id="y-FFMC">FFMC</li>
+                    <li id="y-ISI">ISI</li>
+                    <li id="y-temp">temp</li>
+                    <li id="y-RH">RH</li>
+                    <li id="y-wind">Wind</li>
+                    <li id="y-area">Area</li>
+                </ul>
+            </div>
+        </div>
+        <div id="scatter"></div>
+    </div>
+    <div class="col-md-4" style="left: 350px; width: 950px">
+        <iframe width="500" height="300" scrolling="no" frameborder="no"
+                src="https://fusiontables.google.com/embedviz?q=select+col2%2C+col1+from+1x3WSehrH7y4C9gKdInZW4jsTEjC-HsLOGrqaeEag+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=41.72936803474862&amp;lng=-6.8205935668945505&amp;t=1&amp;z=9&amp;l=col2&amp;y=2&amp;tmplt=2&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=0.75&amp;hmr=50&amp;hmw=0&amp;hml=TWO_COL_LAT_LNG">
+        </iframe>
+        <div id="db-parallel" class="dashboard-element">
+            <div id="parallel"></div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="correlation" class="dashboard-element"></div>
+        <div id="scatter-matrix" class="dashboard-element"></div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="{% static "js/parallel.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/correlation.js" %}"></script>
+    <script src="{% static "js/scatter_matrix.js" %}"></script>
+    <script src="{% static "js/scatter.js" %}" type="text/javascript"></script>
+{% endblock %}

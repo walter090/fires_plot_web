@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Fires{% endblock %}</title>
+</head>
+<body>
+<ul class="nav nav-tabs nav-justified" style="font-size: 2em; color: white; height: auto">
+    <li><a href="/">Home</a></li>
+    <li><a href="/map">Heat Map</a> </li>
+    {% for object in object_set %}
+        <li>
+            <a href="{{ object.get_absolute_url }}" class="nav-text">
+            {{ object.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% block content %}
+<div class="background" id="home-background">
+    <div class="screen mute" id="tv"></div>
+</div>
+{% endblock %}
+{% block scroll %}
+
+{% endblock %}
+</body>
+
+<link rel="stylesheet" href="{% static "css/default.css" %}">
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+{% block scripts %}{% endblock %}
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</html>

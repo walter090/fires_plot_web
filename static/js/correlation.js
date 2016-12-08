@@ -1,18 +1,17 @@
-var margin = {top: 50, bottom: 50, right: 50, left: 50};
-var labelOffset = 15;
-
-var width = 650;
-var height = 650;
-
-var inner_width = width - margin.left - margin.right;
-var inner_height = height - margin.top - margin.bottom;
-
 d3.csv('../static/data_resource/corr_matrix.csv', function (data) {
-    console.log(data);
-    render(data);
+    corrRender(data);
 });
 
-function render(data) {
+function corrRender(data) {
+    var margin = {top: 0, bottom: 20, right: 30, left: 30};
+    var labelOffset = 15;
+
+    var width = 380;
+    var height = 350;
+
+    var inner_width = width - margin.left - margin.right;
+    var inner_height = height - margin.top - margin.bottom;
+
     var svg = d3.select('#correlation').append('svg')
         .attr('width', width)
         .attr('height', height);

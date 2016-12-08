@@ -1,25 +1,17 @@
-var xFeatureList = document.getElementById('x-feature');
-var yFeatureList = document.getElementById('y-feature');
+let xFeatureList = document.getElementById('x-feature');
+let yFeatureList = document.getElementById('y-feature');
 
-var margin = {top: 30, bottom: 30, right: 30, left: 30};
-var labelOffset = 15;
+let xFeature;
+let yFeature;
 
-var rad = 1.5;
+let xSelection;
+let ySelection;
 
-var width = 650;
-var height = 650;
-
-var inner_width = width - margin.left - margin.right;
-var inner_height = height - margin.top - margin.bottom;
-
-var xFeature;
-var yFeature;
-
-var xSelection;
-var ySelection;
+let rad = 1;
 
 d3.csv('../static/data_resource/forest_fire_pred.csv', convert, function (data) {
-    d3.select('svg').remove();
+    d3.select('#scatter').select('svg').remove();
+
     xFeatureList.onclick = function (event) {
         let selection = select(event);
 
@@ -68,17 +60,27 @@ d3.csv('../static/data_resource/forest_fire_pred.csv', convert, function (data) 
 });
 
 function render(data) {
-    var svg = d3.select('#scatter').append('svg')
+    let margin = {top: 30, bottom: 30, right: 30, left: 30};
+    let labelOffset = 15;
+
+    let width = 300;
+    let height = 300;
+
+    let inner_width = width - margin.left - margin.right;
+    let inner_height = height - margin.top - margin.bottom;
+
+
+    let svg = d3.select('#scatter').append('svg')
         .attr('width', width)
         .attr('height', height);
 
-    var group = svg.append('g')
+    let group = svg.append('g')
         .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
     // set up x and y
     // ?Value is the value of data on the x axis
     // ?Map maps the value to a position on the chart
-    var xScale = d3.scaleLinear().range([0, inner_width]),
+    let xScale = d3.scaleLinear().range([0, inner_width]),
         xAxis = d3.axisBottom(xScale),
         xAxisGroup = group.append('g')
             .attr('transform', 'translate(0,' + inner_height + ')'),
@@ -89,7 +91,7 @@ function render(data) {
             return xScale(xValue(d))
         };
 
-    var yScale = d3.scaleLinear().range([inner_height, 0]),
+    let yScale = d3.scaleLinear().range([inner_height, 0]),
         yAxis = d3.axisLeft(yScale),
         yAxisGroup = group.append('g'),
         yValue = function (d) {
@@ -99,7 +101,7 @@ function render(data) {
             return yScale(yValue(d))
         };
 
-    var dot = group.selectAll('.dot').data(data);
+    let dot = group.selectAll('.dot').data(data);
 
     // shift domain by 1 so the points do not intersect with the axis
     xScale.domain([d3.min(data, xValue) - 1, d3.max(data, xValue) + 1]).nice();
@@ -153,7 +155,8 @@ function render(data) {
 }
 
 function disappear() {
-    d3.selectAll('.dot')
+    d3.select('#scatter')
+        .selectAll('.dot')
         .transition()
         .attr('r', 5 * rad)
         .style('opacity', 0.3)
@@ -161,10 +164,12 @@ function disappear() {
         .transition()
         .attr('r', 0)
         .duration(250);
-    d3.selectAll('.tick')
+    d3.select('#scatter')
+        .selectAll('.tick')
         .transition().style('opacity', 0)
         .duration(250);
-    d3.selectAll('text')
+    d3.select('#scatter')
+        .selectAll('text')
         .transition()
         .style('fill', 'red')
         .style('opacity', 0)
