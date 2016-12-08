@@ -64,7 +64,7 @@ d3.csv('../static/data_resource/ei.csv', function (data) {
         .attr('height', function (d) {
             return inner_height - yScale(d['value']);
         })
-        .style('fill', 'white')
+        .style('fill', 'black')
         .on('mouseover', function (d) {
             d3.select(this)
                 .transition()
