@@ -80,7 +80,7 @@ d3.csv('../static/data_resource/ei.csv', function (data) {
         .on('mouseout', function (d) {
             d3.select(this)
                 .transition()
-                .style('fill', 'white')
+                .style('fill', 'black')
                 .duration(1000);
             tip.transition()
                 .style("opacity", 0)
