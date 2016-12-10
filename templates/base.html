@@ -20,8 +20,13 @@
 </ul>
 {% block content %}
     <video playsinline autoplay muted loop id="bg-video">
-    <source src="{% static "video/forest_fire.mp4" %}" type="video/mp4">
-</video>
+        <source src="{% static "video/forest_fire.mp4" %}" type="video/mp4">
+    </video>
+    <divs style="align-content: center; margin: 100px; height: 100px; max-width: 100px; line-height: 100px;
+    font-size: 3em; color: white; text-align: center; border: solid whitesmoke;">
+        Visualization of Montesinho forest fires data
+    </divs>
+
 {% endblock %}
 </body>
 <script src="https://d3js.org/d3.v4.min.js"></script>

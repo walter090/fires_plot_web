@@ -3,10 +3,13 @@ from .models import Graph
 
 
 def go_home(request):
-    query_set = Graph.objects.all()
-    context = {
-        'object_set': query_set
-    }
+    try:
+        query_set = Graph.objects.all()
+        context = {
+            'object_set': query_set
+        }
+    except Exception as e:
+        pass
 
     return render(request, 'base.html', context)
 
