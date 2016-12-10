@@ -69,7 +69,6 @@ function render(data) {
     let inner_width = width - margin.left - margin.right;
     let inner_height = height - margin.top - margin.bottom;
 
-
     let svg = d3.select('#scatter').append('svg')
         .attr('width', width)
         .attr('height', height);
@@ -103,9 +102,51 @@ function render(data) {
 
     let dot = group.selectAll('.dot').data(data);
 
+    let xDomain = [d3.min(data, xValue) - 1, d3.max(data, xValue) + 1];
+    let yDomain = [d3.min(data, yValue) - 1, d3.max(data, yValue) + 1];
     // shift domain by 1 so the points do not intersect with the axis
-    xScale.domain([d3.min(data, xValue) - 1, d3.max(data, xValue) + 1]).nice();
-    yScale.domain([d3.min(data, yValue) - 1, d3.max(data, yValue) + 1]).nice();
+    xScale.domain(xDomain).nice();
+    yScale.domain(yDomain).nice();
+
+    var brush = d3.brush().on("end", brushed), timeOut, delay = 500;
+
+    d3.select("svg")
+        .append("g")
+        .attr("class", "brush")
+        .call(brush);
+
+    function brushed() {
+        var select = d3.event.selection;
+
+        if (!select) {
+            if (!timeOut) return timeOut = setTimeout(out, delay);
+            xScale.domain(xDomain);
+            yScale.domain(yDomain);
+        } else {
+            xScale.domain([select[0][0], select[1][0]].map(xScale.invert, xScale));
+            yScale.domain([select[1][1], select[0][1]].map(yScale.invert, yScale));
+            d3.select("svg").select(".brush").call(brush.move, null);
+        }
+        zoom();
+    }
+
+    function zoom() {
+        var transition = d3.select("svg").transition().duration(500);
+        d3.select("svg").select(".axis:nth-child(1)").transition(transition).call(xAxis);
+        d3.select("svg").select(".axis:nth-child(2)").transition(transition).call(yAxis);
+        d3.select("svg").selectAll("circle").transition(transition)
+            .attr("cx", function (d) {
+                console.log(d);
+                return xScale(d[xFeature]);
+            })
+            .attr("cy", function (d) {
+                return yScale(d[yFeature]);
+            });
+    }
+
+    function out() {
+        timeOut = null;
+    }
 
     xAxisGroup
         .transition()

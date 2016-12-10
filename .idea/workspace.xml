@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3c404a-6775-4d7a-b91c-9e16b660573b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fires/views.py" afterPath="$PROJECT_DIR$/fires/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/parallel.js" afterPath="$PROJECT_DIR$/static/js/parallel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/scatter.js" afterPath="$PROJECT_DIR$/static/js/scatter.js" />
     </list>
     <ignored path="fire_plot_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parallel.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/parallel.js">
+      <file leaf-file-name="scatter.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/scatter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="166" column="27" lean-forward="false" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
+            <state relative-caret-position="555">
+              <caret line="142" column="40" lean-forward="false" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -97,6 +95,10 @@
       <find>d3.svg</find>
       <find>features</find>
       <find>path</find>
+      <find>domain</find>
+      <find>xAxis</find>
+      <find>svg</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>var</replace>
@@ -135,14 +137,14 @@
         <option value="$PROJECT_DIR$/fire_plot_web/urls.py" />
         <option value="$PROJECT_DIR$/templates/pca.html" />
         <option value="$PROJECT_DIR$/static/js/correlation.js" />
-        <option value="$PROJECT_DIR$/static/js/scatter.js" />
         <option value="$PROJECT_DIR$/templates/dashboard.html" />
-        <option value="$PROJECT_DIR$/static/js/scatter_matrix.js" />
         <option value="$PROJECT_DIR$/static/js/pca.js" />
         <option value="$PROJECT_DIR$/fires/views.py" />
         <option value="$PROJECT_DIR$/static/css/default.css" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/js/parallel.js" />
+        <option value="$PROJECT_DIR$/static/js/scatter_matrix.js" />
+        <option value="$PROJECT_DIR$/static/js/scatter.js" />
       </list>
     </option>
   </component>
@@ -772,7 +774,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481183354633</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="parallel brush donw">
+      <created>1481378394151</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1481378394151</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -841,7 +850,8 @@
     <MESSAGE value="map done" />
     <MESSAGE value="dashboard and front page done" />
     <MESSAGE value="scree plot style fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="scree plot style fixed" />
+    <MESSAGE value="parallel brush donw" />
+    <option name="LAST_COMMIT_MESSAGE" value="parallel brush donw" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1084,14 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/scatter-matrix.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/correlation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -1127,14 +1129,6 @@
     <entry file="file://$PROJECT_DIR$/static/video/forest_fire.mp4">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/scatter_matrix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1331">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/pca.js">
@@ -1191,14 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/scatter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2599">
-          <caret line="113" column="21" lean-forward="true" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_mathjs_3.6.0_math.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1215,6 +1201,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/parallel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1610">
+          <caret line="166" column="27" lean-forward="false" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/scatter-matrix.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -1225,10 +1227,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/parallel.js">
+    <entry file="file://$PROJECT_DIR$/static/js/scatter_matrix.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="166" column="27" lean-forward="false" selection-start-line="166" selection-start-column="27" selection-end-line="166" selection-end-column="27" />
+        <state relative-caret-position="-391">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/scatter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="142" column="40" lean-forward="false" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
           <folding />
         </state>
       </provider>
