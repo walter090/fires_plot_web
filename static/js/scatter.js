@@ -110,7 +110,7 @@ function render(data) {
 
     var brush = d3.brush().on("end", brushed), timeOut, delay = 500;
 
-    d3.select("svg")
+    group
         .append("g")
         .attr("class", "brush")
         .call(brush);
@@ -125,16 +125,16 @@ function render(data) {
         } else {
             xScale.domain([select[0][0], select[1][0]].map(xScale.invert, xScale));
             yScale.domain([select[1][1], select[0][1]].map(yScale.invert, yScale));
-            d3.select("svg").select(".brush").call(brush.move, null);
+            group.select(".brush").call(brush.move, null);
         }
         zoom();
     }
 
     function zoom() {
-        var transition = d3.select("svg").transition().duration(500);
-        d3.select("svg").select(".axis:nth-child(1)").transition(transition).call(xAxis);
-        d3.select("svg").select(".axis:nth-child(2)").transition(transition).call(yAxis);
-        d3.select("svg").selectAll("circle").transition(transition)
+        var transition = group.transition().duration(500);
+        group.select(".axis:nth-child(1)").transition(transition).call(xAxis);
+        group.select(".axis:nth-child(2)").transition(transition).call(yAxis);
+        group.selectAll("circle").transition(transition)
             .attr("cx", function (d) {
                 console.log(d);
                 return xScale(d[xFeature]);
